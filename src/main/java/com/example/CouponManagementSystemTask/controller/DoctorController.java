@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(name = "doctor")
+@RequestMapping("doctor")
 public class DoctorController {
     private final DoctorService service;
 

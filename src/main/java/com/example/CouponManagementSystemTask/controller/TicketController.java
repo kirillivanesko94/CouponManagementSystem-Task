@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(name = "ticket")
+@RequestMapping("ticket")
 public class TicketController {
     private final TicketService service;
 
     public TicketController(TicketService service) {
         this.service = service;
     }
-    @PostMapping
+    @PostMapping("save")
     public ResponseEntity<Ticket> saveTicket(@RequestBody TicketDto dto) {
         return ResponseEntity.ok(service.saveTicket(dto));
     }
