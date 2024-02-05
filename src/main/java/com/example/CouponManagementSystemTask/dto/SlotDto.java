@@ -1,30 +1,13 @@
-package com.example.CouponManagementSystemTask.model;
+package com.example.CouponManagementSystemTask.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-import java.security.Timestamp;
+import java.sql.Timestamp;
 import java.util.UUID;
-@Entity
-@Table(name = "slot")
-public class Slot {
-    @Id
-    @Column(name = "id")
-    private UUID id;
-    @Column(name = "time_start")
-    @NotNull
-    private Timestamp timeStart;
-    @Column(name = "time_end")
-    @NotNull
-    private Timestamp timeEnd;
-    @Column(name = "doctor_id")
-    @NotNull
-    private UUID doctorId;
 
-    public Slot() {
-    }
+public class SlotDto {
+    private UUID id;
+    private Timestamp timeStart;
+    private Timestamp timeEnd;
+    private UUID doctorId;
 
     public UUID getId() {
         return id;

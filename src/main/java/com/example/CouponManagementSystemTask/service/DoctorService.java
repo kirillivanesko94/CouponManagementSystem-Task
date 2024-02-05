@@ -5,6 +5,8 @@ import com.example.CouponManagementSystemTask.model.Doctor;
 import com.example.CouponManagementSystemTask.repositories.DoctorRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
 public class DoctorService {
     private final DoctorRepository repository;
@@ -14,6 +16,8 @@ public class DoctorService {
     }
 
     public Doctor saveDoctor(DoctorDto dto) {
+        dto.setId(UUID.randomUUID());
+
         Doctor doctor = new Doctor();
         doctor.setId(dto.getId());
         doctor.setName(dto.getName());
