@@ -5,25 +5,26 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import java.security.Timestamp;
+import java.sql.Timestamp;
 import java.util.UUID;
+
 @Entity
-@Table(name = "slot")
-public class Slot {
+@Table(name = "patient")
+public class Patient {
     @Id
     @Column(name = "id")
     private UUID id;
-    @Column(name = "time_start")
+    @Column(name = "name")
     @NotNull
-    private Timestamp timeStart;
-    @Column(name = "time_end")
+    private String name;
+    @Column(name = "date_of_birth")
     @NotNull
-    private Timestamp timeEnd;
+    private Timestamp dateOfBirth;
     @Column(name = "doctor_id")
     @NotNull
     private UUID doctorId;
 
-    public Slot() {
+    public Patient() {
     }
 
     public UUID getId() {
@@ -34,20 +35,20 @@ public class Slot {
         this.id = id;
     }
 
-    public Timestamp getTimeStart() {
-        return timeStart;
+    public String getName() {
+        return name;
     }
 
-    public void setTimeStart(Timestamp timeStart) {
-        this.timeStart = timeStart;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Timestamp getTimeEnd() {
-        return timeEnd;
+    public Timestamp getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setTimeEnd(Timestamp timeEnd) {
-        this.timeEnd = timeEnd;
+    public void setDateOfBirth(Timestamp dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public UUID getDoctorId() {

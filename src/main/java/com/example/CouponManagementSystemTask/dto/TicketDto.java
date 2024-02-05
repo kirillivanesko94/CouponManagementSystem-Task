@@ -1,27 +1,13 @@
-package com.example.CouponManagementSystemTask.model;
+package com.example.CouponManagementSystemTask.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
-@Entity
-@Table(name = "ticket")
-public class Ticket {
-    @Id
-    @Column(name = "id")
+public class TicketDto {
     private UUID id;
-    @Column(name = "slot_id")
-    @NotNull
-    private UUID slotId;
-    @Column(name = "patient_id")
-    @NotNull
-    private UUID patientId;
 
-    public Ticket() {
-    }
+    private UUID slotId;
+
+    private UUID patientId;
 
     public UUID getId() {
         return id;

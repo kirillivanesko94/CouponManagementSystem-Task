@@ -10,6 +10,7 @@ import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 @WebService(targetNamespace = "http://service.ws.sample/", name = "ScheduleService")
 public interface ScheduleService {
@@ -26,6 +27,6 @@ public interface ScheduleService {
     List<Slot> createSchedule(
             @WebParam(name = "startDate", targetNamespace = "") Date startDate,
             @WebParam(name = "endDate", targetNamespace = "") Date starDate,
-            @WebParam(name = "doctorId", targetNamespace = "") Long id,
+            @WebParam(name = "doctorId", targetNamespace = "") UUID id,
             @WebParam(name = "duration", targetNamespace = "") Integer duration);
 }
